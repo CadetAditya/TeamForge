@@ -1,41 +1,176 @@
 * {
-  margin: 0;bottom: 0;
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-  font-family: system-ui, sans-serif;
-  line-height: 1.5;
-  color: #1f2937;
-  background: #f9fafb;
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  min-width: 320px;
-  min-height: 100vh;
-  color: red;
-  margin: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #e5e7eb;
+    background: #0f172a;
 }
 
-/* Form gitols inherit the page font */
-button,
-input,
-textarea,
-select {
-  font: inherit;
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px clamp(20px, 7vw, 100px);
+    background: #111c33;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Accessible keyboard focus */
-:focus-visible {
-  outline: 3px solid #2563eb;
-  outline-offset: 2px;
+header h2 {
+    margin: 0;
+    color: #5eead4;
+    font-size: 24px;
 }
 
-/* Responsive images */
-img,
-svg,
-video {
-  display: block;
-  max-width: 100%;
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: #5eead4;
+}
+
+.hero {
+    padding: 110px 20px;
+    text-align: center;
+    color: white;
+    background:
+        radial-gradient(circle at 50% 0%, rgba(45, 212, 191, 0.2), transparent 35%),
+        linear-gradient(135deg, #172554, #0f172a 70%);
+}
+
+.hero h1 {
+    margin: 0 0 16px;
+    font-size: clamp(36px, 6vw, 58px);
+    letter-spacing: -1.5px;
+}
+
+.hero p {
+    margin: 0 0 30px;
+    color: #cbd5e1;
+    font-size: 18px;
+}
+
+.hero button {
+    padding: 13px 28px;
+    border: 0;
+    border-radius: 999px;
+    color: #082f2d;
+    background: #5eead4;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.hero button:hover {
+    transform: translateY(-2px);
+    background: #99f6e4;
+}
+
+.about {
+    padding: 75px 20px;
+    text-align: center;
+}
+
+.about h2,
+.services h2 {
+    margin: 0 0 20px;
+    color: white;
+    font-size: 32px;
+}
+
+.about p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #a8b3c7;
+    line-height: 1.8;
+}
+
+.services {
+    padding: 35px 20px 85px;
+    text-align: center;
+}
+
+.service-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 22px;
+    max-width: 1000px;
+    margin: 35px auto 0;
+}
+
+.card {
+    width: min(100%, 280px);
+    padding: 32px 26px;
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    border-radius: 16px;
+    background: #172338;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(94, 234, 212, 0.55);
+}
+
+.card h3 {
+    margin: 0 0 12px;
+    color: #5eead4;
+}
+
+.card p {
+    margin: 0;
+    color: #a8b3c7;
+    line-height: 1.6;
+}
+
+footer {
+    padding: 22px 20px;
+    color: #a8b3c7;
+    background: #111c33;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px;
+    }
+
+    nav {
+        gap: 20px;
+    }
+
+    .hero {
+        padding: 85px 20px;
+    }
+
+    .about {
+        padding: 60px 22px;
+    }
+
+    .services {
+        padding-bottom: 65px;
+    }
 }
