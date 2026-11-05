@@ -1,0 +1,39 @@
+/* Global reset */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color: #1f2937;
+  background: #f9fafb;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Form controls inherit the page font */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Accessible keyboard focus */
+:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* Responsive images */
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
