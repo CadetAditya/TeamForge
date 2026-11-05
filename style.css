@@ -1,5 +1,5 @@
-/* Global reset */
 * {
+  margin: 0;bottom: 0;
   box-sizing: border-box;
 }
 
@@ -8,15 +8,17 @@ html {
   line-height: 1.5;
   color: #1f2937;
   background: #f9fafb;
+  scroll-behavior: smooth;
 }
 
 body {
   min-width: 320px;
   min-height: 100vh;
+  color: red;
   margin: 0;
 }
 
-/* Form controls inherit the page font */
+/* Form gitols inherit the page font */
 button,
 input,
 textarea,
