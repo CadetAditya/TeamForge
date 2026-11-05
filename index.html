@@ -4,177 +4,301 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TeamForge | Build Better Teams</title>
+    <title>TeamForge Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Navbar -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">Team<span>Forge</span></div>
+<div class="dashboard">
 
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#how-it-works">How It Works</a></li>
-            </ul>
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
 
-            <div class="nav-buttons">
-                <a href="#" class="login-btn">Login</a>
-                <a href="#" class="signup-btn">Get Started</a>
+        <div class="logo">
+            Team<span>Forge</span>
+        </div>
+
+        <nav class="navigation">
+
+            <button class="nav-item active" onclick="showPage('home', this)">
+                <span>⌂</span> Home page
+            </button>
+
+            <!-- HUNT DROPDOWN -->
+            <div class="nav-group">
+
+                <button class="nav-item"
+                    onclick="toggleMenu('hunt-menu', this)">
+                    <span>⌕</span> Hunt
+                    <span class="arrow">⌄</span>
+                </button>
+
+                <div class="submenu" id="hunt-menu">
+                    <button onclick="showPage('open-project', this)">
+                        Open Project
+                    </button>
+
+                    <button onclick="showPage('events', this)">
+                        Events
+                    </button>
+                </div>
+
             </div>
+
+            <!-- MY PROJECT DROPDOWN -->
+            <div class="nav-group">
+
+                <button class="nav-item"
+                    onclick="toggleMenu('project-menu', this)">
+                    <span>▣</span> My Project
+                    <span class="arrow">⌄</span>
+                </button>
+
+                <div class="submenu" id="project-menu">
+                    <button onclick="showPage('find-teammate', this)">
+                        Find Teammate
+                    </button>
+
+                    <button onclick="showPage('join-project', this)">
+                        Join a Project
+                    </button>
+                </div>
+
+            </div>
+
+            <button class="nav-item"
+                onclick="showPage('profile', this)">
+                <span>◉</span> Profile
+            </button>
+
         </nav>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <p class="tagline">FIND YOUR PERFECT TEAM</p>
-
-            <h1>
-                Great Projects Start
-                With <span>Great People.</span>
-            </h1>
-
-            <p class="hero-description">
-                Find teammates who complement your skills
-                or discover projects that match your passion.
-                Let your skills find their perfect match.
-            </p>
-
-            <div class="hero-buttons">
-                <a href="#" class="primary-btn">Find Teammates</a>
-                <a href="#" class="secondary-btn">Explore Projects</a>
-            </div>
+        <div class="sidebar-bottom">
+            <p>Build Together.</p>
+            <small>TeamForge © 2026</small>
         </div>
 
-        <div class="hero-card">
-            <div class="card-header">
-                <h3>Top Developer Match</h3>
-                <span class="match-label">Recommended</span>
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+
+            <div>
+                <h3 id="page-title">Home page</h3>
+                <p>Welcome back to TeamForge!</p>
             </div>
 
-            <div class="developer">
-                <div class="avatar">AS</div>
-                <div>
-                    <h3>Alex Sharma</h3>
-                    <p>Full Stack Developer</p>
+            <div class="user-profile">
+                <div class="user-avatar">A</div>
+                <span>My Profile</span>
+            </div>
+        </header>
+
+
+        <!-- HOME PAGE -->
+        <section class="page active-page" id="home">
+
+            <div class="section">
+                <div class="section-header">
+                    <div>
+                        <h2>Recommended Projects</h2>
+                        <p>Projects matching your skills and interests.</p>
+                    </div>
+
+                    <button class="explore-btn"
+                        onclick="showPage('open-project')">
+                        Explore More →
+                    </button>
+                </div>
+
+                <div class="card-container">
+
+                    <div class="project-card">
+                        <div class="card-image purple">
+                            <span>AI</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>AI Recommendation System</h3>
+                            <p>Python · Machine Learning</p>
+                            <span class="match">92% Match</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="card-image blue">
+                            <span>WEB</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>Web Development Platform</h3>
+                            <p>React · Node.js</p>
+                            <span class="match">88% Match</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="card-image pink">
+                            <span>APP</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>Smart Mobile Application</h3>
+                            <p>Flutter · Firebase</p>
+                            <span class="match">85% Match</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
-            <div class="match-score">
-                <div>
-                    <p>Compatibility Score</p>
-                    <h2>94%</h2>
+
+            <div class="section">
+
+                <div class="section-header">
+                    <div>
+                        <h2>Recommended Events</h2>
+                        <p>Discover hackathons and developer events.</p>
+                    </div>
+
+                    <button class="explore-btn"
+                        onclick="showPage('events')">
+                        Explore More →
+                    </button>
                 </div>
-                <div class="score-circle">94</div>
+
+                <div class="card-container">
+
+                    <div class="project-card">
+                        <div class="card-image blue">
+                            <span>HACK</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>National Hackathon</h3>
+                            <p>Technology · Innovation</p>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="card-image pink">
+                            <span>DEV</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>Developer Meetup</h3>
+                            <p>Networking · Learning</p>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="card-image purple">
+                            <span>AI</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>AI Innovation Challenge</h3>
+                            <p>Artificial Intelligence</p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
-            <div class="skills">
-                <span>Python</span>
-                <span>React</span>
-                <span>Node.js</span>
-                <span>SQL</span>
+        </section>
+
+
+        <!-- OPEN PROJECT -->
+        <section class="page" id="open-project">
+            <div class="section-header">
+                <div>
+                    <h2>Open Projects</h2>
+                    <p>Find projects that match your technical skills.</p>
+                </div>
             </div>
 
-            <p class="match-message">
-                Excellent match for your project!
-            </p>
-        </div>
-    </section>
+            <div class="empty-message">
+                <h2>Explore New Opportunities</h2>
+                <p>Recommended projects will appear here.</p>
+            </div>
+        </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <div class="section-heading">
-            <p class="tagline">WHY TEAMFORGE?</p>
-            <h2>Everything You Need to Build a Team</h2>
-            <p>Smart recommendations based on your skills and interests.</p>
-        </div>
 
-        <div class="feature-container">
+        <!-- EVENTS -->
+        <section class="page" id="events">
+            <h2>Upcoming Events</h2>
+            <p>Discover hackathons, competitions and meetups.</p>
 
-            <div class="feature-box">
-                <div class="feature-icon">👥</div>
-                <h3>Find Teammates</h3>
-                <p>
-                    Discover developers whose skills complement
-                    your project requirements.
-                </p>
+            <div class="empty-message">
+                <h2>Explore Developer Events</h2>
+                <p>Events matching your interests will appear here.</p>
+            </div>
+        </section>
+
+
+        <!-- FIND TEAMMATE -->
+        <section class="page" id="find-teammate">
+
+            <div class="section-header">
+                <div>
+                    <h2>Find Teammates</h2>
+                    <p>Find developers compatible with your project.</p>
+                </div>
             </div>
 
-            <div class="feature-box">
-                <div class="feature-icon">🚀</div>
-                <h3>Discover Projects</h3>
-                <p>
-                    Find exciting projects that match your
-                    technical skills and interests.
-                </p>
+            <div class="empty-message">
+                <h2>Find Your Perfect Team</h2>
+                <p>Create a project to discover compatible teammates.</p>
             </div>
 
-            <div class="feature-box">
-                <div class="feature-icon">🧠</div>
-                <h3>Smart Matching</h3>
-                <p>
-                    Our weighted scoring algorithm analyzes
-                    profiles to recommend compatible matches.
-                </p>
+        </section>
+
+
+        <!-- JOIN PROJECT -->
+        <section class="page" id="join-project">
+
+            <h2>Join a Project</h2>
+            <p>Discover projects looking for new team members.</p>
+
+            <div class="empty-message">
+                <h2>Find a Project to Join</h2>
+                <p>Explore available collaboration opportunities.</p>
             </div>
 
-        </div>
-    </section>
+        </section>
 
-    <!-- How It Works -->
-    <section class="how-it-works" id="how-it-works">
-        <div class="section-heading">
-            <p class="tagline">SIMPLE PROCESS</p>
-            <h2>How TeamForge Works</h2>
-        </div>
 
-        <div class="steps">
+        <!-- PROFILE -->
+        <section class="page" id="profile">
 
-            <div class="step">
-                <div class="step-number">01</div>
-                <h3>Create Your Profile</h3>
-                <p>Add your GitHub, LeetCode and CV details.</p>
+            <h2>My Profile</h2>
+            <p>Manage your developer information.</p>
+
+            <div class="empty-message">
+                <h2>Your Developer Profile</h2>
+                <p>GitHub · LeetCode · CV · Skills</p>
             </div>
 
-            <div class="step">
-                <div class="step-number">02</div>
-                <h3>Analyze Your Skills</h3>
-                <p>We analyze your technical skills and experience.</p>
+        </section>
+
+
+        <!-- CREATE PROJECT -->
+        <section class="page" id="create-project">
+
+            <h2>My Projects</h2>
+            <p>Manage your previously created projects.</p>
+
+            <button class="create-btn">+ Create Project</button>
+
+            <div class="empty-message">
+                <h2>Your Created Projects</h2>
+                <p>Your projects will appear here.</p>
             </div>
 
-            <div class="step">
-                <div class="step-number">03</div>
-                <h3>Get Recommendations</h3>
-                <p>Our algorithm finds your best matches.</p>
-            </div>
+        </section>
 
-            <div class="step">
-                <div class="step-number">04</div>
-                <h3>Build Together</h3>
-                <p>Connect with developers and start collaborating.</p>
-            </div>
+    </main>
 
-        </div>
-    </section>
+</div>
 
-    <!-- CTA Section -->
-    <section class="cta">
-        <h2>Ready to Find Your Perfect Team?</h2>
-        <p>Your next great project starts with the right people.</p>
-        <a href="#" class="primary-btn">Join TeamForge Today</a>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="logo">Team<span>Forge</span></div>
-        <p>Connecting Skills. Building Teams. Creating Impact.</p>
-        <p class="copyright">
-            © 2026 TeamForge. All rights reserved.
-        </p>
-    </footer>
-
+<script src="script.js"></script>
 </body>
 </html>
